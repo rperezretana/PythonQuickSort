@@ -1,0 +1,7 @@
+def qsort(arr):
+    if not arr: return arr # empty sequence case
+    pivot = arr[random.choice(range(0, len(arr)))]
+
+    head = qsort([x for x in arr if x < pivot])
+    tail = qsort([x for x in arr if x > pivot])
+    return head + [x for x in arr if x == pivot] + tail
